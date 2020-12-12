@@ -21,7 +21,7 @@ public class BubbleSort {
 		return array;
 	}
 
-	public static int[] bubbleSort_2(int[] array) {
+	public static int[] selectionSort(int[] array) {
 		if (array.length == 0) {
 			return new int[] {};
 		}

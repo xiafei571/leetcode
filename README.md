@@ -1,3 +1,3 @@
 # leetcode
 
--- 终于连上GitHub了
+-- 日常练习

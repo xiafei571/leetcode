@@ -12,6 +12,10 @@ public class MaxPathSum124 {
 		return max;
 	}
 
+	/*
+	 * 考虑实现一个简化的函数 maxGain(node)，该函数计算二叉树中的一个节点的最大贡献值.
+	 * 得到每个节点的最大贡献值之后,节点的最大路径和取决于该节点的值与该节点的左右子节点的最大贡献值
+	 */
 	private int maxGain(TreeNode node) {
 		if (node == null) {
 			return 0;

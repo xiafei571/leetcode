@@ -37,4 +37,8 @@ public class SummaryRanges228 {
 
 		return result;
 	}
+	/*
+	 * Follow up，如果输⼊入有duplicate numbers，怎么办
+	 * 
+	 */
 }

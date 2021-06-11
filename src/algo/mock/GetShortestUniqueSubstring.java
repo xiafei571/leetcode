@@ -6,11 +6,63 @@ import java.util.Map;
 public class GetShortestUniqueSubstring {
 	public static void main(String[] args) {
 		char[] arr = new char[] { 'x', 'y', 'z' };
-		System.out.println(getShortestUniqueSubstring(arr, "xyyzyzyx"));
-		System.out.println(getShortestUniqueSubstring(arr, "xyyz"));
-		System.out.println(getShortestUniqueSubstring(arr, "xzyzyx"));
+		System.out.println(getShortestUniqueSubstring2(arr, "xyyzyzyx"));
+		System.out.println(getShortestUniqueSubstring2(arr, "xyyz"));
+		System.out.println(getShortestUniqueSubstring2(arr, "xzyzyx"));
 	}
 
+	private static String getShortestUniqueSubstring2(char[] arr, String str) {
+		String result = "";
+		int uniqueCnt = 0;
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		for (char c : arr) {
+			map.put(c, 0);
+		}
+
+		int left = 0;
+		for (int right = 0; right < str.length(); right++) {
+			char rightChar = str.charAt(right);
+			if (!map.containsKey(rightChar)) {
+				continue;
+			}
+
+			int count = map.get(rightChar);
+			if(count == 0) {
+				uniqueCnt++;
+			}
+			map.put(rightChar, count + 1);
+
+			while (uniqueCnt == arr.length) {
+				int tempLength = right - left + 1;
+				if(tempLength == arr.length) {
+					return str.substring(left, right+1);
+				}
+				
+				if(result == "" || result.length() > tempLength) {
+					//update result
+					result = str.substring(left, right+1);
+				}
+				
+				char leftChar = str.charAt(left);
+				if(map.containsKey(leftChar)){
+					map.put(leftChar, map.get(leftChar) - 1);
+					left++;
+					if(map.get(leftChar) == 0) {
+						uniqueCnt--;
+					}
+				}
+				
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @deprecated
+	 * @param arr
+	 * @param str
+	 * @return
+	 */
 	private static String getShortestUniqueSubstring(char[] arr, String str) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (char c : str.toCharArray()) {

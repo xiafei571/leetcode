@@ -44,5 +44,11 @@ public class SummaryRanges228 {
 			System.out.println(s);
 		}
 	}
+	/*
+	 * Follow up1: 如果输⼊有duplicate numbers，怎么办?
+	 * 用Set 或者 老方法遍历的时候注意一下+1和相等的情况，最好判断一下left == right不
+	 * Follow up2: 没有排序呢?
+	 * 用Map存，遍历的时候， 先判断map内存的值>0， 然后num -- ,++ 把左右搜索个遍
+	 */
 
 }

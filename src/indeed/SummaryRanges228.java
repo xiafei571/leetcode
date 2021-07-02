@@ -1,6 +1,8 @@
 package indeed;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class SummaryRanges228 {
@@ -43,6 +45,15 @@ public class SummaryRanges228 {
 		for(String s : result) {
 			System.out.println(s);
 		}
+		
+		List<Integer[]> list = new ArrayList<Integer[]>();
+		Collections.sort(list, new Comparator<Integer[]>() {
+
+			public int compare(Integer[] o1, Integer[] o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		});
 	}
 	/*
 	 * Follow up1: 如果输⼊有duplicate numbers，怎么办?

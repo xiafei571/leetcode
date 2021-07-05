@@ -1,6 +1,6 @@
 package atcoder;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class ABC20210508C {
 	public static void main(String[] args) {

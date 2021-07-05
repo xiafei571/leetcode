@@ -1,6 +1,7 @@
 package algo.expert;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ClassPhotos {
 	public boolean classPhotos(ArrayList<Integer> redShirtHeights, ArrayList<Integer> blueShirtHeights) {

@@ -1,6 +1,7 @@
 package algo.expert;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MinMaxStackConstruction {
 	// Feel free to add new properties and methods to the class.

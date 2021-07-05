@@ -1,6 +1,7 @@
 package algo.expert;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FindSuccessor {
 	// This is an input class. Do not edit.

@@ -1,6 +1,7 @@
 package am;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Merge56 {
@@ -13,59 +14,21 @@ public class Merge56 {
 			return intervals;
 		}
 
-		int i = 0;
-		int j = 1;
-
-		int[] curr = intervals[i];
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
-
-		while (j < intervals.length) {
-			int[] next = intervals[j];
-			if (j == intervals.length - 1) {// last one
-				if (next[0] > curr[1]) {
-					List<Integer> c = new ArrayList<Integer>();
-					c.add(curr[0]);
-					c.add(curr[1]);
-					List<Integer> n = new ArrayList<Integer>();
-					n.add(next[0]);
-					n.add(next[1]);
-					result.add(c);
-					result.add(n);
-				} else {
-					List<Integer> m = new ArrayList<Integer>();
-					m.add(Math.min(curr[0], next[0]));
-					m.add(Math.max(curr[1], next[1]));
-					result.add(m);
-				}
-			} else {
-
-				if (next[0] > curr[1]) {
-					List<Integer> c = new ArrayList<Integer>();
-					c.add(curr[0]);
-					c.add(curr[1]);
-					List<Integer> n = new ArrayList<Integer>();
-					n.add(next[0]);
-					n.add(next[1]);
-					result.add(c);
-					result.add(n);
-					i = j;
-					curr = intervals[i];
-
-				} else {
-					curr[0] = Math.min(curr[0], next[0]);
-					curr[1] = Math.max(curr[1], next[1]);
-				}
-
-				j++;
+		Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+		List<int[]> result = new ArrayList<int[]>();
+		
+		result.add(intervals[0]);
+		for(int i = 1; i < intervals.length; i++) {
+			int[] curr = intervals[i];
+			int[] last = result.get(result.size() - 1);
+			
+			if(curr[0] > last[1]) {
+				result.add(curr);
+			}else {
+				last[1] = Math.max(curr[1], last[1]);
 			}
 		}
-
-		int[][] ans = new int[result.size()][2];
-		for (int k = 0; k < result.size(); k++) {
-			ans[i] = new int[] { result.get(i).get(0), result.get(i).get(1) };
-		}
-
-		return ans;
-
+		
+		return result.toArray(new int[result.size()][2]);
 	}
 }

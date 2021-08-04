@@ -20,14 +20,14 @@ public class IsAlienSorted {
 
 	public static boolean isAlienSorted(String[] words, String order) {
 		char[] dict = order.toCharArray();
-		for (int i = 0; i < order.length(); i++) {
+		for (int i = 0; i < order.length(); i++) {//O(1)
 			char ch = order.charAt(i);
 			dict[ch-'a'] = (char)('a'+i);
 		}
 
 		String pre = words[0];
 
-		for (int i = 1; i < words.length; i++) {
+		for (int i = 1; i < words.length; i++) {//O(N*C) C is max length of word
 			String curr = words[i];
 			int c = compare(dict, pre, curr);
 			if (c > 0) {

@@ -28,6 +28,6 @@ public class TweetCounts1348 {
 	 * @return
 	 */
 	public List<Integer> getTweetCountsPerFrequency(String freq, String tweetName, int startTime, int endTime) {
-
+		return null;
 	}
 }

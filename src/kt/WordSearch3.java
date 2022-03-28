@@ -1,5 +1,8 @@
 package kt;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WordSearch3 {
 	static class Trie {
 		String word;

@@ -3,7 +3,7 @@ package kt;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WordSearch {
+public class WordSearch2 {
 	static List<Integer[]> res;
 
 	public static void main(String[] args) {

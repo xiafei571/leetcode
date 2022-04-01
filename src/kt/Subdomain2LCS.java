@@ -1,6 +1,6 @@
 package kt;
 
-public class LCS {
+public class Subdomain2LCS {
 	 public int findLength(int[] nums1, int[] nums2) {
          int subIndex = 0;
          int subSize = 0;

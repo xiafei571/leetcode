@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Subdomain {
+public class Subdomain1 {
 	public List<String> subdomainVisits(String[] cpdomains) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (String cpdomain : cpdomains) {// Time Complexity: O(N), where N is the length of cpdomains

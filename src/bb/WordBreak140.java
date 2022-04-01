@@ -8,14 +8,27 @@ import java.util.Map;
 
 public class WordBreak140 {
 	private static Map<String, List<String>> cache;
+	
+	public static void main(String[] args) {
+		String s = "catsanddog";
+		List<String> list = new ArrayList<String>();
+		//wordDict = ["cat","cats","and","sand","dog"]
+		list.add("cat");
+		list.add("cats");
+		list.add("and");
+		list.add("sand");
+		list.add("dog");
+		
+		wordBreak(s, list);
+	}
 
-	public List<String> wordBreak(String s, List<String> wordDict) {
+	public static List<String> wordBreak(String s, List<String> wordDict) {
 		cache = new HashMap<String, List<String>>();
 		HashSet<String> dict = new HashSet<String>(wordDict);
 		return backtrack(s, dict);
 	}
 
-	private List<String> backtrack(String s, HashSet<String> dict) {
+	private static List<String> backtrack(String s, HashSet<String> dict) {
 		if (cache.containsKey(s)) {
 			return cache.get(s);
 		}

@@ -11,9 +11,9 @@ public class BullsandCows299 {
 		for (int i = 0; i < guess.length(); i++) {
 			char s = secret.charAt(i);
 			char g = guess.charAt(i);
-			if (s == g) {
+			if (s == g) {//猜对了 match了
 				bulls++;
-			} else {
+			} else {// 小于0的是已猜的，大于0的是已给出的
 				if (h[s - '0'] < 0) {
 					cows++;
 				}

@@ -7,8 +7,8 @@ public class WordSearch2 {
 	static List<Integer[]> res;
 
 	public static void main(String[] args) {
-		char[][] board = { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } };
-		String word = "SEE";
+		char[][] board = { { 'A', 'c', 'c', 'E' }, { 'S', 'c', 'c', 'S' }, { 'A', 'c', 'c', 'E' } };
+		String word = "ccc";
 		System.out.println(exist(board, word));
 		for (Integer[] path : res) {
 			System.out.println(path[0] + ":" + path[1]);
